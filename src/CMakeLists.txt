@@ -105,7 +105,7 @@ if(UNIX)
     endif (APPLE)
 endif(UNIX)
 
-target_include_directories(discord-rpc PRIVATE ${RAPIDJSON}/include)
+target_include_directories(discord-rpc PRIVATE ${PROJECT_SOURCE_DIR}/thirdparty/rapidjson/include)
 
 if (NOT ${ENABLE_IO_THREAD})
     target_compile_definitions(discord-rpc PUBLIC -DDISCORD_DISABLE_IO_THREAD)
@@ -121,7 +121,6 @@ if (CLANG_FORMAT_CMD)
 endif(CLANG_FORMAT_CMD)
 
 target_include_directories(discord-rpc PUBLIC ${PROJECT_SOURCE_DIR}/include)
-
 # install
 
 install(
